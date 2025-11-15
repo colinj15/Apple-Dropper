@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class BoxController : MonoBehaviour
 {
     public Vector2 startpos;
     private Vector3 mousePos;
+    private float padding;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,11 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
-        transform.position = new Vector3(mousePos.x, startpos.y, -5f);
+        transform.position = new Vector3(mousePos.x + padding, startpos.y, -5f);
+    }
+
+    public void SetPadding(float newPadding)
+    {
+        padding = newPadding;
     }
 }

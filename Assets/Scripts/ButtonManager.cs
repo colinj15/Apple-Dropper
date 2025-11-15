@@ -24,8 +24,7 @@ public class ButtonManager : MonoBehaviour
                 SceneManager.LoadScene("Main"); 
                 break;
             case Button.Score:
-                Debug.Log("Score button clicked");
-                // Add your Score button logic here 
+                SceneManager.LoadScene("Score");
                 break;
             case Button.Quit:
                 Application.Quit();

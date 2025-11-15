@@ -15,6 +15,7 @@ public class AppleController : MonoBehaviour
     {
         if (collision.CompareTag("Kill"))
         {
+            scoreManager.LoseLife(1);
             Destroy(gameObject);
         }
         if (collision.CompareTag("Player"))
